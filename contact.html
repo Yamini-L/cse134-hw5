@@ -25,6 +25,7 @@
             <h1 style="letter-spacing:4px;">Contact Me</h1>
         </div>
         <table class="contact-info">
+            <caption>Contact details</caption>
             <colgroup>
                 <col span="1" style="background-color: lightcyan">
             </colgroup>
@@ -40,6 +41,16 @@
             </tr>
         </table>
 
+        <!-- Contact form will be placed inside the template to be shown only when the Contact Form is clicked -->
+        <template id = "contact-form"> 
+            
+        </template>
+
+        <button onclick="contact();">Contact Form</button>
+        <script>
+            
+        </script>
+
         <form action="/action_page.php" target="_blank">
             <fieldset>
                 <legend>Contact Form</legend>
@@ -53,12 +64,26 @@
                 <input class="form-fields" type="tel" placeholder="(XXX) XXX - XXXX" name="Phone" 
                                     pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}" required><br><br>
                 
+                <label for="Subject">Subject:</label>
+                <select>
+                    <optgroup label="Subject">
+                        <option value="" disabled selected>Select your option</option>
+                        <option value="Partner">Looking for a partner for project</option>
+                        <option value="Recruiter">Recruiter</option>
+                        <option value="Other">Other</option>
+                    </optgroup>
+                </select><br><br>
+
                 <textarea class="form-fields" type="text" placeholder="Message" name="Message"></textarea><br><br>
 
                 <button  type="submit">Submit</button>
 
             </fieldset>
         </form>
+
+        
+
+        
 
     </section>
 </body>

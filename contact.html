@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+	<meta charset="UTF-8">
+    <meta name="viewport" content=
+        "width=device-width, initial-scale=1.0">
+    <title>HTML Project</title>
+
+</head>
+<body>
+    <nav class="nav-bar">
+        <div class="top-bar" style="letter-spacing:4px;">
+            <a href="main.html" class="Nav Buttons">Portfolio</a>
+            <div style="display:inline" class="right-bar">
+                <a href="main.html#about" class="Nav Buttons">About</a>
+                <a href="academics.html" class="Nav Buttons">Skills</a>
+                <a href="contact.html" class="Nav Buttons">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <section class="section-parts" id="contact">
+        <div class="part-title" >
+            <h1 style="letter-spacing:4px;">Contact Me</h1>
+        </div>
+        <table class="contact-info">
+            <colgroup>
+                <col span="1" style="background-color: lightcyan">
+            </colgroup>
+            <tr>
+                <th>Email: </th>
+                <td>ylakkara@ucsd.edu </th>
+                <th> || </th>
+                <td> ylakkaraju@gmail.com</th>
+            </tr>
+            <tr>
+                <th>Phone: </td>
+                <td>(949) 885-6667</td>
+            </tr>
+        </table>
+
+        <form action="/action_page.php" target="_blank">
+            <fieldset>
+                <legend>Contact Form</legend>
+                <label for="name">Name:</label>
+                <input class="form-fields" type="text" placeholder="John Doe" name="Name" required><br><br>
+
+                <label for="Email">Email:</label>
+                <input class="form-fields" type="email" placeholder="johndoe@gmail.com" name="Email" required><br><br>
+
+                <label for="Phone">Phone number:</label>
+                <input class="form-fields" type="tel" placeholder="(XXX) XXX - XXXX" name="Phone" 
+                                    pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}" required><br><br>
+                
+                <textarea class="form-fields" type="text" placeholder="Message" name="Message"></textarea><br><br>
+
+                <button  type="submit">Submit</button>
+
+            </fieldset>
+        </form>
+
+    </section>
+</body>
+</html>

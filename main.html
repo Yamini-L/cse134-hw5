@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+	<meta charset="UTF-8">
+    <meta name="description" content="Personal portfolio - CSE134B" />
+	<meta name="keywords" content="HTML, CSS, JavaScript" />
+	<meta name="author" content="Yamini Lakkaraju"/>
+    <meta name="viewport" content=
+        "width=device-width, initial-scale=1.0">
+    <title>HTML Project</title>
+
+    <script>
+		window.addEventListener('load', function () {
+			let time = window.performance.timing,
+				complete = time.domComplete - time.domLoading;
+			document.getElementById('page-load-info').innerHTML = `<strong>Page Loaded in ${parseInt(complete)}ms
+			 on ${new Date().toLocaleString("en-US")}</strong>`;
+		});
+	</script>
+
+</head>
+<body style="background-color:grey" >
+
+    <nav class="nav-bar">
+        <nav class="nav-bar">
+            <div class="top-bar" style="letter-spacing:4px;">
+                <a href="main.html" class="Nav Buttons">Portfolio</a>
+                <div style="display:inline" class="right-bar">
+                    <a href="main.html#about" class="Nav Buttons">About</a>
+                    <a href="academics.html" class="Nav Buttons">Skills</a>
+                    <a href="contact.html" class="Nav Buttons">Contact</a>
+                </div>
+            </div>
+        </nav>
+
+    <hr>
+
+    <header class="heading-part" style="max-width:1600px;min-width:500px" id="home">
+        <h1 class="name">Yamini Lakkaraju</h1>
+    </header>
+
+    <hr>
+
+    <main id="page" style="max-width:1100px">
+        <!-- About -->
+        <section class="section-parts" id="about">
+    
+            <div class="part-title" >
+                <h1 style="letter-spacing:4px;">About me</h1>
+                <h3> Undergraduate | Computer Engineering | UCSD</h5>
+            </div>
+
+            <aside id="personal-image">
+                <img src="profile1.png" alt="Profile picture" width="200" />
+            </aside>
+            
+        </section>
+    
+    </main>
+
+
+    <footer>
+		<hr/>
+		<p>This page was made with &hearts; by Yamini Lakkaraju </p>
+	</footer>
+    <script type="module">
+		import { update } from './scripts/main.js';
+		window.update = update;
+	</script>
+	<script nomodule src="scripts/main-es5.js"></script>
+
+</body>
+</html>

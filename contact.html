@@ -32,12 +32,12 @@
             </colgroup>
             <tr>
                 <th>Email: </th>
-                <td>ylakkara@ucsd.edu </th>
+                <td>ylakkara@ucsd.edu </td>
                 <th> || </th>
-                <td> ylakkaraju@gmail.com</th>
+                <td> ylakkaraju@gmail.com</td>
             </tr>
             <tr>
-                <th>Phone: </td>
+                <th>Phone: </th>
                 <td>(949) 885-6667</td>
             </tr>
         </table>
@@ -60,18 +60,18 @@
             <fieldset>
                 <legend>Contact Form</legend>
                 <label for="name">Name:</label>
-                <input class="form-fields" type="text" placeholder="John Doe" name="Name" required><br><br>
+                <input class="form-fields" type="text" placeholder="John Doe" name="Name" required id="name"><br><br>
 
                 <label for="Email">Email:</label>
-                <input class="form-fields" type="email" placeholder="johndoe@gmail.com" name="Email" required><br><br>
+                <input class="form-fields" type="email" placeholder="johndoe@gmail.com" name="Email" required id="Email"><br><br>
 
                 <label for="Phone">Phone number:</label>
-                <input class="form-fields" type="tel" placeholder="(XXX) XXX - XXXX" name="Phone" 
+                <input class="form-fields" type="tel" placeholder="(XXX) XXX - XXXX" name="Phone" id="Phone"
                                     pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}" required><br><br>
                 
                 <label for="Subject">Subject:</label>
-                <select>
-                    <optgroup label="Subject">
+                <select id="Subject">
+                    <optgroup label="subject">
                         <option value="" disabled selected>Select your option</option>
                         <option value="Partner">Looking for a partner for project</option>
                         <option value="Recruiter">Recruiter</option>
@@ -79,7 +79,7 @@
                     </optgroup>
                 </select><br><br>
 
-                <textarea class="form-fields" type="text" placeholder="Message" name="Message"></textarea><br><br>
+                <textarea class="form-fields" placeholder="Message" name="Message"></textarea><br><br>
 
                 <button  type="submit">Submit</button>
 

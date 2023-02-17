@@ -89,18 +89,20 @@ header {
 aside {
     width: 20%;
     height: 100%;
-    margin-top: auto;
+    margin: auto;
     float: right;
     border: 1.5px solid black;
-    background-color: rgb(241, 219, 192);
+    background-color: rgb(62, 55, 68);
     border-radius: 10px;
     box-shadow: 5px 5px 5px #000;
     -webkit-box-shadow: 5px 5px 5px #000;
     -moz-border-radius: 10px;
     -moz-box-shadow: 5px 5px 5px #000;
-    margin: 0 auto;
-    padding-left: 1.5em;
-    vertical-align: middle;
+    padding: 1.5em;
+    animation: fadeIn 2s;
+    justify-content: center;
+
+
 }
 
 .section-parts {

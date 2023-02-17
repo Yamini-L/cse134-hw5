@@ -10,6 +10,7 @@
         "width=device-width, initial-scale=1.0">
     <title>HTML Project</title>
     <link href="profile1.png" rel="image" >
+    <link href="profile.css" rel="stylesheet" type="text/css" /> 
 
 
     <!-- <script>
@@ -25,30 +26,30 @@
 <body>
 
     <nav class="nav-bar">
-        <div class="top-bar">
-            <a href="index.html" class="Nav Buttons">Portfolio</a>
-            <div style="display:inline" class="right-bar">
-                <a href="index.html#about" class="Nav Buttons">About</a>
-                <a href="academics.html" class="Nav Buttons">Skills</a>
-                <a href="contact.html" class="Nav Buttons">Contact</a>
-            </div>
-        </div>
+        <a href="index.html"  class="home-button" >Portfolio</a>
+        <input id="ham-menu" type="checkbox" />
+        <label for="ham-menu" class="hamburger">&#9776;</label>
+        <ul class="side-bar"> 
+            <li><a href="index.html#about">About</a></li>
+            <li><a href="academics.html" >Skills</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
     </nav>
-
-    <hr>
-
     <!-- max-width:1600px;min-width:500px -->
     <header class="heading-part" style="max-width:1600px" id="home">
-        <h1 class="name">Yamini Lakkaraju</h1>
-        <picture>
-            <img src="background.jpg" style="width: 400px;" alt="background picture - laptop and desk"> 
-        </picture>
+        <div class="container">
+            <h1 class="name">Yamini Lakkaraju</h1>
+            <picture>
+                <img src="background.jpg" style="width: 100%;" alt="background picture - laptop and desk"> 
+            </picture>
+        </div>
     </header>
 
     <hr>
     
     <main id="page" style="max-width:1100px">
         <!-- About -->
+        
         <section class="section-parts" id="about">
     
             <div class="part-title" >
@@ -56,6 +57,13 @@
                 <h3> Undergraduate | Computer Engineering | UCSD</h3>
             </div>
 
+            <aside id="personal-image">
+                <figure>
+                    <img src="profile1.png" alt="Profile picture" width="200" />
+                    <figcaption> Personal image </figcaption>
+                </figure>
+            </aside>
+            
             <div class = "paragraphs">
                 <p>I am currently a <b> Computer Engineering </b> <strong>undergraduate student</strong> at 
                     <i>University of California, San Diego</i> with an expected graduation in <em>2023</em>. I plan to continue
@@ -63,12 +71,6 @@
                     software development, programming languages, data science and artificial intelligence. 
                     I would like to work on specific projects related to these topics through the next few years. </p>
             </div>
-            <aside id="personal-image">
-                <figure>
-                    <img src="profile1.png" alt="Profile picture" width="200" />
-                    <figcaption> Personal image </figcaption>
-                </figure>
-            </aside>
         </section>
     
     </main>

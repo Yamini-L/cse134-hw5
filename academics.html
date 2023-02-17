@@ -9,6 +9,7 @@
     <meta name="viewport" content=
         "width=device-width, initial-scale=1.0">
     <title>HTML Project</title>
+    <link href="profile.css" rel="stylesheet" type="text/css" /> 
 
     <script>
 		window.addEventListener('load', function () {
@@ -23,36 +24,32 @@
 <body>
 
     <nav class="nav-bar">
-        <div class="top-bar">
-            <a href="index.html" class="Nav Buttons">Portfolio</a>
-            <div style="display:inline" class="right-bar">
-                <a href="index.html#about" class="Nav Buttons">About</a>
-                <a href="academics.html" class="Nav Buttons">Skills</a>
-                <a href="contact.html" class="Nav Buttons">Contact</a>
-            </div>
+        <a href="index.html"  class="home-button" >Portfolio</a>
+        <input id="ham-menu" type="checkbox" />
+        <label for="ham-menu" class="hamburger">&#9776;</label>
+        <div class="side-bar"> 
+            <a href="index.html#about">About</a>
+            <a href="academics.html" >Skills</a>
+            <a href="contact.html">Contact</a>
         </div>
     </nav>
-
-    <hr>
-
 
     <main id="page" style="max-width:1100px">
     
         <!-- Skills -->
         <section class="section-parts" id="skills">
             
-            
             <div class="part-title" >
                 <h1>Skills</h1>
             </div>
             
             <!-- Canvas to hold the symbols related to the languages/frameworks -->
-            <canvas id="myCanvas" width="200" height="100"></canvas>
+            <!-- <canvas id="myCanvas" width="200" height="100"></canvas>
 
-            <script></script>
+            <script></script> -->
         
             <div>
-                <pre>Languages </pre>
+                <h2>Languages </h2>
                 <ol>
                     <li> <code>Java</code> </li>
                     <li> <code> Python </code> </li>
@@ -76,7 +73,6 @@
             </div>
 
             <div>
-
                 <details>
 
                     <summary>Block-Coding Game </summary>

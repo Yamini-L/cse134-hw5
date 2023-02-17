@@ -12,7 +12,9 @@
     margin: 0;  
 }
 
-
+main {
+    height: auto;
+}
 input[type=checkbox]{
     display: none;
     
@@ -85,9 +87,9 @@ header {
 }
 
 aside {
-    width: 32%;
-    height: 2rem;
-    margin-top: 2em;
+    width: 20%;
+    height: 100%;
+    margin-top: auto;
     float: right;
     border: 1.5px solid black;
     background-color: rgb(241, 219, 192);
@@ -96,6 +98,9 @@ aside {
     -webkit-box-shadow: 5px 5px 5px #000;
     -moz-border-radius: 10px;
     -moz-box-shadow: 5px 5px 5px #000;
+    margin: 0 auto;
+    padding-left: 1.5em;
+    vertical-align: middle;
 }
 
 .section-parts {
@@ -136,6 +141,7 @@ h2 {
     margin-right: auto;
     text-align: center;
 }
+
 div.form {
     display: block;
     text-align: center;
@@ -155,6 +161,19 @@ form {
     border-collapse: collapse;
 
 }
+
+.project-topics {
+    padding-left: 1rem;  
+}
+
+footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    color: black;
+    text-align: center;
+  }
 
 @media only screen and (max-width: 595px) {
 
@@ -181,6 +200,10 @@ form {
         
     .hamburger {
         display: block;
+    }
+
+    aside {
+        display: none;
     }
     
 }

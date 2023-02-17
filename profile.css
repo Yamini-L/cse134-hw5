@@ -50,6 +50,10 @@ nav {
 
 }
 
+#home-mobile {
+    display: none;;
+}
+
 .side-bar {
     gap: 1.5em;
     display: flex;
@@ -215,6 +219,9 @@ footer {
         right: 0;
         left: 0;
     }
+    #home-mobile {
+        display: inline;
+    }
  
     .menu a:hover {
         color: black;
@@ -233,6 +240,26 @@ footer {
 
     aside {
         display: none;
+    }
+    .languages, td {
+        border: 1px solid;
+        width: 20rem;
+        font-size: large;
+        text-align: center;
+        margin-left: auto;
+        margin-right: auto;
+        table-layout: auto;
+        border-collapse: collapse; 
+        border-spacing: 20px;
+    }
+    
+    th, tr {
+        box-shadow: 1px 1px 5px rgba(0,0,0,0.3);
+        -webkit-box-shadow: 1px 1px 5px rgba(0,0,0,0.3);
+        -moz-box-shadow: 1px 1px 5px rgba(0,0,0,0.3);
+        transform: scale(1);
+        -webkit-transform: scale(1);
+        -moz-transform: scale(1);
     }
     
 }

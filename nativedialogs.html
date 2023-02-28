@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="keywords" content="HTML, CSS, JavaScript" />
+	<meta name="author" content="Yamini Lakkaraju"/>
+    <meta name="viewport" content=
+        "width=device-width, initial-scale=1.0">
+	<title>Simple Dialogs </title>
+
+</head>
+
+<body>
+    <h1>Simple Dialogs</h1>
+
+    <button id="alert">Alert</button>
+	<button id="confirm">Confirm</button>
+	<button id="prompt">Prompt</button>
+	<button id="safer-prompt">Safer Prompt</button>
+
+    <output id="output"></output>
+
+    <script>
+		const alertButton = document.getElementById('alert');
+		const confirmButton = document.getElementById('confirm');
+		const promptButton = document.getElementById('prompt');
+		const saferPromptButton = document.getElementById('safer-prompt');
+
+        const output = document.getElementById('output');
+
+        alertButton.addEventListener('click', () => {
+			window.alert('Alert!');
+		});
+
+        confirmButton.addEventListener('click', () => {
+            const result = window.confirm('Do you confirm?');
+            if (result) {
+                output.textContent = `Confirm result: ${result}`;
+            } else {
+                output.textContent = `Confirm result: ${result}`;
+            }
+		});
+
+        promptButton.addEventListener('click', () =>  {
+            const result = window.prompt('What is your name?');
+            if (result) {
+                output.textContent = `Prompt result: ${result}`;
+            } else {
+                output.textContent = 'User didn’t enter anything';
+            }
+		});
+
+        saferPromptButton.addEventListener('click', () => {
+            const result = window.prompt('What is your name?');
+
+            if (result) {
+                const purified = DOMPurify.sanitize(input);
+                output.innerHTML = `Prompt result: ${purified}!`;
+            } else {
+                output.textContent = 'User didn’t enter anything';
+            }
+		});
+
+
+    </script>
+
+
+
+</body>
+
+</html>

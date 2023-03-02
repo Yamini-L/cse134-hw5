@@ -22,6 +22,7 @@
         </div>
     </nav>
 
+
     <section class="section-parts" id="contact">
         <div class="part-title" >
             <h1>Contact Me</h1>
@@ -32,26 +33,14 @@
             <p>Phone: (949) 885-6667</p>
         </div>
 
-        <!-- Contact form will be placed inside the template to be shown only when the Contact Form is clicked -->
-        <!-- <template id = "contact-form"> 
-            
-        </template>
-
-        <svg width="100" height="100">            Plan on using it to hold the button for contact form
-
-        </svg>
-        
-        <button onclick="contact();">Contact Form</button>
-        <script>
-            
-        </script> -->
-
         <div class="form" >
-        <form action="/action_page.php" target="_blank">
+        <!-- <form action="/action_page.php" target="_blank"> -->
+
+        <form id="new-form">
             <fieldset>
                 <legend>Contact Form</legend>
                 <label for="name">Name:</label>
-                <input class="form-fields" type="text" placeholder="John Doe" name="Name" required id="name"><br><br>
+                <input class="form-fields" type="text" placeholder="John Doe" name="Name" required id="Name"><br><br>
 
                 <label for="Email">Email:</label>
                 <input class="form-fields" type="email" placeholder="johndoe@gmail.com" name="Email" required id="Email"><br><br>
@@ -72,12 +61,44 @@
 
                 <textarea class="form-fields" placeholder="Message" name="Message"></textarea><br><br>
 
-                <button  type="submit">Submit</button>
+                <button onclick="submit()" >Submit</button>
 
             </fieldset>
         </form>
-        </div>
+        </div>        
 
     </section>
+
+    <script>
+        const contacts = [];
+
+        const nameInput = document.getElementById("Name");
+        const emailInput = document.getElementById("Email");
+        const phoneInput = document.getElementById("Phone");
+        const subjectInput = document.getElementById("Subject");
+        const messageInput = document.getElementById("Message");
+
+        function submit() {
+            const newContact = {
+                name: nameInput.value,
+                email: emailInput.value,
+                phone: phoneInput.value,
+                subject: subjectInput.value,
+                message: messageInput.value
+            };
+
+            contacts.push(newContact);
+
+            nameInput.value = "";
+            emailInput.value = "";
+            phoneInput.value = "";
+            subjectInput.value = "";
+            messageInput.value = "";
+
+        }
+        // document.getElementById("contact").innerHTML = contacts; 
+        
+    </script>
+
 </body>
 </html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Custom Dialogs Example</title>
+    
+ </head>
+<body>
+    <button onclick="alert()"> Alert </button>
+    <button onclick="confirm()"> Confirm</button>
+    <button onclick="prompt()"> Prompt</button>
+    <output id="output"></output>
+
+    <dialog id="alert">
+        <h1>Alert</h1>
+        <p> Alert pressed! </p>
+
+        <button onclick="closeDialog()">OK</button>
+    </dialog>
+
+    <dialog id="confirm" >
+        <h1>Confirm</h1>
+        <p> Do you confirm?</p>
+        <button onclick="confirmT(true)">Yes</button>
+        <button onclick="confirmT(false)">No</button>
+    </dialog>
+
+    <dialog id="prompt">
+        <h1>Prompt</h1>
+        <p> What is your name?</p>
+        <input type="text" id="prompt-input" />
+        <button onclick="showPrompt()">OK</button>
+        <button onclick="closeDialog()">Cancel</button>
+    </dialog>
+
+    <script src="customdialog.js" type="text/javascript"></script>
+    <script src="purify.js"></script>
+
+</body>
+</html>

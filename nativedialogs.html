@@ -21,7 +21,9 @@
 
     <output id="output"></output>
 
+    <script src="purify.js"></script>
     <script>
+        
 		const alertButton = document.getElementById('alert');
 		const confirmButton = document.getElementById('confirm');
 		const promptButton = document.getElementById('prompt');
@@ -30,22 +32,19 @@
         const output = document.getElementById('output');
 
         alertButton.addEventListener('click', () => {
-			window.alert('Alert!');
+			window.alert('Alert pressed!');
 		});
 
         confirmButton.addEventListener('click', () => {
             const result = window.confirm('Do you confirm?');
-            if (result) {
-                output.textContent = `Confirm result: ${result}`;
-            } else {
-                output.textContent = `Confirm result: ${result}`;
-            }
+            output.textContent = `Confirm result: ${result}`;
 		});
 
         promptButton.addEventListener('click', () =>  {
             const result = window.prompt('What is your name?');
             if (result) {
-                output.textContent = `Prompt result: ${result}`;
+                const purified = DOMPurify.sanitize(result);
+                output.textContent = `Prompt result: ${purified}`;
             } else {
                 output.textContent = 'User didn’t enter anything';
             }
@@ -55,7 +54,7 @@
             const result = window.prompt('What is your name?');
 
             if (result) {
-                const purified = DOMPurify.sanitize(input);
+                const purified = DOMPurify.sanitize(result);
                 output.innerHTML = `Prompt result: ${purified}!`;
             } else {
                 output.textContent = 'User didn’t enter anything';

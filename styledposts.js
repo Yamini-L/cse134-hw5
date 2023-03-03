@@ -27,7 +27,6 @@ function showPosts() {
     firstRow.insertCell(0).innerHTML = "<b>Title</b>";
     firstRow.insertCell(1).innerHTML = "<b>Date</b>";
     firstRow.insertCell(2).innerHTML = "<b>Summary</b>";
-
     firstRow.insertCell(3).innerHTML = "<b>Edit</b>";
     firstRow.insertCell(4).innerHTML = "<b>Delete</b>";
 

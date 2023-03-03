@@ -49,13 +49,14 @@
                 output.textContent = 'User didn’t enter anything';
             }
 		});
+        
 
         saferPromptButton.addEventListener('click', () => {
             const result = window.prompt('What is your name?');
 
             if (result) {
                 const purified = DOMPurify.sanitize(result);
-                output.innerHTML = `Prompt result: ${purified}!`;
+                output.innerHTML = `Prompt result: ${purified}`;
             } else {
                 output.textContent = 'User didn’t enter anything';
             }

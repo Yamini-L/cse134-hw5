@@ -8,7 +8,7 @@ const summaryInput = document.getElementById("summary");
 const blogPosts = [
 	{
 		title: "Winter in San Diego",
-		date: "2023-2-20",
+		date: "2023-02-20",
 		summary: "New winter storm hits San Diego..."
 	},
 	{
@@ -97,5 +97,3 @@ function closeDialog() {
     const dialog = document.querySelector('dialog[open]');
     dialog.close();
 }
-
-

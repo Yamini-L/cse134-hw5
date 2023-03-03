@@ -8,7 +8,7 @@ const summaryInput = document.getElementById("summary");
 const blogPosts = [
 	{
 		title: "Winter in San Diego",
-		date: "2023-2-20",
+		date: "2023-02-20",
 		summary: "New winter storm hits San Diego..."
 	},
 	{
@@ -31,12 +31,16 @@ function showPosts() {
         row.insertCell(3).innerHTML = "<button onclick='editPost(" + i + ")'>Edit</button>";
         row.insertCell(4).innerHTML = "<button onclick='deletePost(" + i + ")'>Delete</button>";
     }
-
     closeDialog();
 
 }
 
 function add() {
+    
+    titleInput.value = "";
+    dateInput.value = "";
+    summaryInput.value = "";
+
     addButton.showModal();
 }
 
@@ -86,4 +90,3 @@ function closeDialog() {
     const dialog = document.querySelector('dialog[open]');
     dialog.close();
 }
-

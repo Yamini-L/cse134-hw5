@@ -28,8 +28,13 @@
     <nav class="nav-bar">
         <a href="index.html"  class="home-button" >Portfolio</a>
         <input id="ham-menu" type="checkbox" />
-        <label for="ham-menu" class="hamburger">&#9776;</label>
+        <label for="ham-menu" class="hamburger">&#9776;</label>        
+        
         <div class="side-bar"> 
+            <div id="search-cont">
+                <input type="text" id="search-input" onkeyup="search_web(this.value)" placeholder="Search">
+                <div id="search-results"></div>
+            </div>
             <a href="index.html" id="home-mobile">Home</a>
             <a href="index.html#about">About</a>
             <a href="academics.html" >Skills</a>
@@ -76,11 +81,61 @@
 		<hr/>
 		<p>This page was made with &hearts; by Yamini Lakkaraju </p>
 	</footer>
-    <script type="module">
-		import { update } from './scripts/main.js';
-		window.update = update;
-	</script>
+    
 	<script nomodule src="scripts/main-es5.js"></script>
+    <script src="https://cdn.jsdelivr.net/algoliasearch/3/algoliasearch.min.js"></script>
+    <script>
+        
+        const algoliasearch = require('algoliasearch');
+
+
+        const client = algoliasearch('9ZJ9CS2SHC', '0249b2c9362f98b9769a8da738b0c63c');
+        const index = client.initIndex('contacts');
+        
+    </script>
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=GA_TRACKING_ID"></script>
+    <script>
+        const search_items = ['About', 'Languages', 'Skills', 'Frameworks', 'Contact', 'Home'];
+
+        function autocompleteMatch(input) {
+            if (input == '') {
+                return [];
+            }
+            var reg = new RegExp(input)
+            return search_items.filter(function(term) {
+                if (term.match(reg)) {
+                return term;
+                }
+            });
+         }
+
+        function search_web(val) {
+            results = document.getElementById("search-results");
+            results.innerHTML = '';
+            let list = '';
+            let terms = autocompleteMatch(val);
+            for (i=0; i<terms.length; i++) {
+                list += '<li>' + terms[i] + '</li>';
+            }
+            results.innerHTML = '<ul>' + list + '</ul>';
+        }
+
+        //  function search_web() {
+        //     let input = document.getElementById('search-input').value
+        //     input=input.toLowerCase();
+        //     let x = document.getElementsByClassName('searchItems');
+            
+        //     for (i = 0; i < x.length; i++) { 
+        //         if (!x[i].innerHTML.toLowerCase().includes(input)) {
+        //             x[i].style.display="none";
+        //         }
+        //         else {
+        //             x[i].style.display="list-item";                 
+        //         }
+        //     }
+        // }
+    </script>
 
 </body>
 </html>

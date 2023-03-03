@@ -30,6 +30,14 @@ a {
     text-decoration: none;
 }
     
+#search-results ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    position: fixed;
+    z-index: 5;
+  }
+
 nav {
     overflow: hidden;
     position: -webkit-sticky;

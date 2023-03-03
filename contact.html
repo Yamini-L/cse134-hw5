@@ -15,6 +15,10 @@
         <input id="ham-menu" type="checkbox" />
         <label for="ham-menu" class="hamburger">&#9776;</label>
         <div class="side-bar"> 
+            <div id="search-cont">
+                <input type="text" id="search-input" onkeyup="search_web(this.value)" placeholder="Search">
+                <div id="search-results"></div>
+            </div>
             <a href="index.html" id="home-mobile">Home</a>
             <a href="index.html#about">About</a>
             <a href="academics.html" >Skills</a>

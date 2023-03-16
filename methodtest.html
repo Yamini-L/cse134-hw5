@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+    <meta name="viewport" content=
+        "width=device-width, initial-scale=1.0">
+    <title>Method Test</title>
+    <!-- <link href="httpsteststyle.css" rel="stylesheet" type="text/css" />  -->
+
+    <style>
+        form {
+            display: inline-block;
+            margin-left: auto;
+            margin-right: auto;
+            text-align: left;
+            line-height: 2rem;
+        }
+
+        #http-buttons {
+            line-height: 2rem;
+        }
+
+        output {
+            white-space: pre;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Method Test</h1>
+
+    <form>
+        <label for="id">ID:</label>
+        <input type="text" id="id" name="id"><br>
+  
+        <label for="article_name">Article Name:</label>
+        <input type="text" id="article_name" name="article_name"><br>
+  
+        <label for="article_body">Article Body:</label>
+        <textarea id="article_body" name="article_body"></textarea><br>
+  
+        <label for="date">Date:</label>
+        <input type="text" id="date" name="date" readonly><br>
+
+        <input type="radio" id="xmlHttpRequest" name="api" value="xmlHttpRequest">
+        <label for="xmlHttpRequest">XMLHttpRequest</label>
+
+        <input type="radio" id="fetch" name="api" value="fetch">
+        <label for="fetch">Fetch API</label><br>
+
+    </form>
+
+    <div id="http-buttons">
+        
+        <button id="postBtn">POST</button>
+        <button id="getBtn">GET</button>
+        <button id="putBtn">PUT</button>
+        <button id="deleteBtn">DELETE</button><br>
+
+    </div>
+
+	<output id="response"></output>
+
+    <script type="module"> 
+        const postB = document.getElementById("postBtn");
+        const getB = document.getElementById("getBtn");
+        const putB = document.getElementById("putBtn");
+        const deleteB = document.getElementById("deleteBtn");
+
+        const responseB = document.getElementById("response");
+
+        const xhrR = document.getElementById('xmlHttpRequest');
+        const fetchR = document.getElementById('fetch');
+
+        let dateTime = new Date();
+        document.getElementById("date").value = dateTime.toString();
+
+        postB.addEventListener('click', () => {
+            const data = {
+                id: document.getElementById('id').value,
+                article_name: document.getElementById('article_name').value,
+                article_body: document.getElementById('article_body').value,
+                date: document.getElementById('date').value,
+            };
+
+            if(xhrR.checked){
+                let xhr = new XMLHttpRequest();
+                xhr.open('POST', 'https://httpbin.org/post');
+                xhr.setRequestHeader('Content-Type', 'application/json;charset=UTF-8');
+                xhr.onreadystatechange = function() {
+                    if (xhr.readyState === 4 && xhr.status === 200) {
+                        const response = JSON.parse(xhr.responseText);
+
+                        // var responseFormat = "<table><tr><th>Field</th><th>Value</th></tr>";
+                        // for (var key in response) {
+                        //     responseFormat += "<tr><td>" + key + "</td><td>" + response[key] + "</td></tr>";
+                        // }
+                        // responseFormat += "</table>";
+                        
+                        responseB.innerHTML = "<pre>" + JSON.stringify(response, null, 4) + "</pre>";
+                    }
+                };
+                xhr.send(JSON.stringify(data));
+
+            } else if (fetchR.checked)  {
+                fetch('https://httpbin.org/post', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json;charset=UTF-8'
+                    },
+                    body: JSON.stringify(data),
+                })
+
+                .then(response => response.json())
+                .then(json => {
+                    responseB.innerHTML = "<pre>" + JSON.stringify(json, null, 4) + "</pre>";
+                })
+            }
+        });
+
+        getB.addEventListener('click', () => {
+            if(xhrR.checked){
+                let xhr = new XMLHttpRequest();
+                xhr.open('GET', 'https://httpbin.org/get');
+                xhr.onreadystatechange = function() {
+                    if (xhr.readyState === 4 && xhr.status === 200) {
+                        const response = JSON.parse(xhr.responseText);
+                        responseB.innerHTML = "<pre>" + JSON.stringify(response, null, 4) + "</pre>";
+
+                    }
+                };
+                xhr.send();
+            } else if (fetchR.checked)   {
+                fetch('https://httpbin.org/get')
+                .then(response => response.json())
+                .then(json => {
+                    responseB.innerHTML = "<pre>" + JSON.stringify(json, null, 4) + "</pre>";
+                })
+            }
+        });
+
+        putB.addEventListener('click', () => {
+            const data = {
+                id: document.getElementById('id').value,
+                article_name: document.getElementById('article_name').value,
+                article_body: document.getElementById('article_body').value,
+                date: document.getElementById('date').value,
+            };
+
+            if(xhrR.checked){
+                let xhr = new XMLHttpRequest();
+                xhr.open('PUT', 'https://httpbin.org/put');
+                xhr.setRequestHeader('Content-Type', 'application/json');
+                xhr.onreadystatechange = function() {
+                    if (xhr.readyState === 4 && xhr.status === 200) {
+                        const response = JSON.parse(xhr.responseText);
+                        responseB.innerHTML = "<pre>" + JSON.stringify(response, null, 4) + "</pre>";
+                    }
+                };
+                xhr.send(JSON.stringify(data));
+            } else if (fetchR.checked)  {
+                fetch('https://httpbin.org/put', {
+                    method: 'PUT',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify(data),
+                })
+
+                .then(response => response.json())
+                .then(json => {
+                    responseB.innerHTML = "<pre>" + JSON.stringify(json, null, 4) + "</pre>";
+
+                })
+
+            }
+        });
+
+        deleteB.addEventListener('click', () => {
+
+            if(xhrR.checked){
+                let xhr = new XMLHttpRequest();
+                xhr.open("DELETE", "https://httpbin.org/delete");
+                xhr.onreadystatechange = function() {
+                    if (xhr.readyState === 4 && xhr.status === 200) {
+                        const response = JSON.parse(xhr.responseText);
+                        responseB.innerHTML = "<pre>" + JSON.stringify(response, null, 4) + "</pre>";
+                    }
+                };
+                xhr.send();
+
+            } else if (fetchR.checked)  {
+                fetch('https://httpbin.org/delete', {
+                    method: "DELETE",
+                })
+                .then(response => response.json())
+                .then(json => {
+                    responseB.innerHTML = "<pre>" + JSON.stringify(json, null, 4) + "</pre>";
+                })
+            }
+        });
+
+    </script>
+</body>
+</html>

@@ -1,6 +1,4 @@
-Github: https://github.com/Yamini-L/cse134-hw4
+Github: https://github.com/Yamini-L/cse134-hw5
 
-nativedialogs: https://ylcse134bhw4.netlify.app/nativedialogs.html
-customdialog: https://ylcse134bhw4.netlify.app/customdialogs.html
-crud.html: https://ylcse134bhw4.netlify.app/crud.html
-styledcrud.html: https://ylcse134bhw4.netlify.app/styledcrud.html
+part 1: https://ylcse134bhw5.netlify.app/methodtest.html
+part 2: https://ylcse134bhw5.netlify.app/webcomponent.html
